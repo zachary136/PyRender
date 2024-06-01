@@ -4,25 +4,13 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy as np
 
-# Vertex Shader
-v_shader = """
-#version 330
-layout(location = 0) in vec4 position;
-void main()
-{
-    gl_Position = position;
-}
-"""
+# Load shader as string from file
+def load_shader(shader_file):
+    with open(shader_file, 'r') as file:
+        return file.read()
 
-# Fragment Shader
-f_shader = """
-#version 330
-out vec4 fragColor;
-void main()
-{
-    fragColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);
-}
-"""
+v_shader = load_shader('vertex.glsl')
+f_shader = load_shader('fragment.glsl')
 
 # Define the vertices of the triangle
 vertices = np.array([
