@@ -88,7 +88,7 @@ def main():
         
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-        # Draw your OpenGL objects here
+        
         glUseProgram(shader)
         glBindVertexArray(VAO)
         glDrawArrays(GL_TRIANGLES, 0, 3)
